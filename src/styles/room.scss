@@ -14,15 +14,26 @@
       > img{
         max-height:45px;
       }
+
+      > div {
+        display:flex;
+        align-items:center;
+        gap: 16px;
+
+        button {
+          height: 40px;
+        }
+      }
     }
   }
 
   main {
     max-width: 800px;
     margin: 0 auto;
+    padding: 32px 0;
 
     .room-title {
-      margin: 32px 0 24px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
 
@@ -41,6 +52,10 @@
         font-weight: 500;
         font-size: 14px;
       }
+    }
+
+    .question-list{
+      margin-top: 32px;
     }
 
     form {
