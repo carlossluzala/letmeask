@@ -42,18 +42,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const provider = new firebase.auth.GoogleAuthProvider()
     const result = await auth.signInWithPopup(provider)
 
-    setValidUser(result.user)
+    result.user && setValidUser(result.user)
   }, [])
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      setValidUser(user)
+      user && setValidUser(user)
     })
 
     return () => {
       unsubscribe()
     }
-  }, [user])
+  }, [])
 
   return (
     <AuthContext.Provider value={{ signInWithGoogle, user }}>
